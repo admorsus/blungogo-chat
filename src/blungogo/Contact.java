@@ -14,6 +14,7 @@ public class Contact {
 
     ObjectInputStream ois;
     ObjectOutputStream oos;
+    // DataOutputStream;
 
     class InputThread extends Thread {
 
@@ -23,8 +24,8 @@ public class Contact {
                 nickname = ois.readUTF();
 
                 while(true) {
-                    String[] msg = (String[]) ois.readObject();
-                    server.send(nickname, msg);
+                    String[] inputMsg = (String[]) ois.readObject();
+                    server.send(nickname, inputMsg);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

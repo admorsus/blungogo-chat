@@ -37,6 +37,7 @@ public class Servidor implements Runnable {
                 ServerSocket serverSocket = new ServerSocket(port);
                 Socket socket = serverSocket.accept();
                 Contact contact = new Contact(this, socket);
+                contacts.add(contact);
 
             }
         } catch (IOException e) {
