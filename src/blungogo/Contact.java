@@ -45,6 +45,7 @@ public class Contact {
         }
 
         InputThread input = new InputThread();
+        input.start();
 
     }
 
